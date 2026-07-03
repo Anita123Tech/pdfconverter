@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online PDF converter. Convert images, Word, Excel to PDF and PDF to images, Word, Excel. 100% free, secure & fast.">
+    <meta name="theme-color" content="#0b1121">
+    <meta property="og:title" content="PDFToolify - Smart Tools for Everyday PDF Tasks">
+    <meta property="og:description" content="Free online PDF converter. Convert images, Word, Excel to PDF and PDF to images, Word, Excel. 100% free, secure & fast.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="icons/logo-icon.svg">
+    <title>PDFToolify - Smart Tools for Everyday PDF Tasks</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </noscript>
+    
+    <!-- External Libraries -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script defer src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon-3d"><img src="icons/logo-icon.svg" alt="PDFToolify" class="logo-svg"></span>
+                <span class="logo-text">PDFToolify</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#tools" class="nav-link" data-section="tools">Tools</a></li>
+                <li><a href="#features" class="nav-link" data-section="features">Features</a></li>
+                <li><a href="#how-it-works" class="nav-link" data-section="how-it-works">How It Works</a></li>
+                <li><a href="#faq" class="nav-link" data-section="faq">FAQ</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#tools" class="nav-cta"><i class="fas fa-rocket"></i> Get Started</a>
+            </div>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i>
+                <span>100% Free & Secure — No Signup Required</span>
+            </div>
+            <h1 class="hero-title">
+                Smart Tools for<br>
+                <span class="gradient-text">Everyday PDF Tasks</span>
+            </h1>
+            <p class="hero-subtitle">
+                Convert, merge, and transform your files instantly. 
+                Your documents never leave your browser — complete privacy guaranteed.
+            </p>
+            <div class="hero-buttons">
+                <a href="#tools" class="btn btn-primary btn-lg">
+                    <i class="fas fa-rocket"></i> Start Converting
+                </a>
+                <a href="#how-it-works" class="btn btn-outline btn-lg">
+                    <i class="fas fa-play-circle"></i> How It Works
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#tools">
+                <div class="mouse">
+                    <div class="mouse-wheel"></div>
+                </div>
+                <span>Scroll Down</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============ STATS SECTION ============ -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Files Converted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">PDF Tools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free & Secure</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available Online</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOOLS SECTION ============ -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="--badge-index:0"><i class="fas fa-wrench"></i> Our Tools</span>
+                <h2 class="section-title">All-in-One PDF Converter</h2>
+                <p class="section-desc">Choose a tool below to get started. Fast, free, and no registration needed.</p>
+            </div>
+
+            <!-- Tool Selection Grid -->
+            <div class="tools-grid">
+                <div class="tool-card active" data-tool="image-to-pdf" onclick="switchTool('image-to-pdf', this)">
+                    <div class="tool-card-img">
+                        <img src="icons/img-to-pdf.svg" alt="Image to PDF" loading="lazy" width="40" height="40">
+                    </div>
+                    <div class="tool-card-info">
+                        <h3>Image to PDF</h3>
+                        <p>Convert JPG, PNG, WEBP images to PDF documents</p>
+                    </div>
+                    <div class="tool-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-tool="word-to-pdf" onclick="switchTool('word-to-pdf', this)">
+                    <div class="tool-card-img">
+                        <img src="icons/word-to-pdf.svg" alt="Word to PDF" loading="lazy" width="40" height="40">
+                    </div>
+                    <div class="tool-card-info">
+                        <h3>Word to PDF</h3>
+                        <p>Convert DOCX & DOC files to PDF format</p>
+                    </div>
+                    <div class="tool-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-tool="excel-to-pdf" onclick="switchTool('excel-to-pdf', this)">
+                    <div class="tool-card-img">
+                        <img src="icons/excel-to-pdf.svg" alt="Excel to PDF" loading="lazy" width="40" height="40">
+                    </div>
+                    <div class="tool-card-info">
+                        <h3>Excel to PDF</h3>
+                        <p>Convert XLS & XLSX spreadsheets to PDF</p>
+                    </div>
+                    <div class="tool-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-tool="pdf-to-image" onclick="switchTool('pdf-to-image', this)">
+                    <div class="tool-card-img">
+                        <img src="icons/pdf-to-img.svg" alt="PDF to Image" loading="lazy" width="40" height="40">
+                    </div>
+                    <div class="tool-card-info">
+                        <h3>PDF to Image</h3>
+                        <p>Extract pages from PDF as JPG/PNG images</p>
+                    </div>
+                    <div class="tool-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-tool="pdf-to-word" onclick="switchTool('pdf-to-word', this)">
+                    <div class="tool-card-img">
+                        <img src="icons/pdf-to-word.svg" alt="PDF to Word" loading="lazy" width="40" height="40">
+                    </div>
+                    <div class="tool-card-info">
+                        <h3>PDF to Word</h3>
+                        <p>Convert PDF documents to editable Word files</p>
+                    </div>
+                    <div class="tool-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-tool="pdf-to-excel" onclick="switchTool('pdf-to-excel', this)">
+                    <div class="tool-card-img">
+                        <img src="icons/pdf-to-excel.svg" alt="PDF to Excel" loading="lazy" width="40" height="40">
+                    </div>
+                    <div class="tool-card-info">
+                        <h3>PDF to Excel</h3>
+                        <p>Convert PDF tables to Excel spreadsheets</p>
+                    </div>
+                    <div class="tool-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== CONVERTER WORKSPACE ========== -->
+            <div class="workspace" id="workspace">
+
+                <!-- ===== IMAGE TO PDF ===== -->
+                <div class="workspace-panel active" id="panel-image-to-pdf">
+                    <div class="panel-top">
+                        <div class="panel-title">
+                            <img src="icons/img-to-pdf.svg" alt="" class="panel-icon-img" loading="lazy" width="40" height="40">
+                            <div>
+                                <h3>Image to PDF Converter</h3>
+                                <p>Upload one or multiple images to convert them into a PDF document</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropzone" id="imgDropzone"
+                         ondragover="dragOver(event)" 
+                         ondragleave="dragLeave(event)" 
+                         ondrop="dropFiles(event, 'image')">
+                        <input type="file" id="imgFileInput" accept="image/*" multiple onchange="handleFiles(this.files, 'image')" hidden>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <img src="icons/img-to-pdf.svg" alt="Image to PDF" loading="lazy" width="40" height="40">
+                            </div>
+                            <h4>Drag & Drop your images here</h4>
+                            <p>or</p>
+                            <button class="btn btn-primary" onclick="document.getElementById('imgFileInput').click()">
+                                <i class="fas fa-folder-open"></i> Browse Files
+                            </button>
+                            <span class="dropzone-formats">Supported: JPG, PNG, WEBP, GIF, BMP</span>
+                        </div>
+                    </div>
+
+                    <div class="file-preview-grid" id="imgPreviewGrid"></div>
+
+                    <div class="options-panel" id="imgOptions" style="display:none;">
+                        <h4><i class="fas fa-cog"></i> Conversion Settings</h4>
+                        <div class="options-row">
+                            <div class="option-item">
+                                <label for="imgPageSize">Page Size</label>
+                                <select id="imgPageSize">
+                                    <option value="a4" selected>A4 (210 × 297 mm)</option>
+                                    <option value="letter">Letter (8.5 × 11 in)</option>
+                                    <option value="legal">Legal (8.5 × 14 in)</option>
+                                    <option value="a3">A3 (297 × 420 mm)</option>
+                                    <option value="fit">Fit to Image</option>
+                                </select>
+                            </div>
+                            <div class="option-item">
+                                <label for="imgOrientation">Orientation</label>
+                                <select id="imgOrientation">
+                                    <option value="portrait">Portrait</option>
+                                    <option value="landscape">Landscape</option>
+                                    <option value="auto">Auto Detect</option>
+                                </select>
+                            </div>
+                            <div class="option-item">
+                                <label for="imgMargin">Margin</label>
+                                <select id="imgMargin">
+                                    <option value="0">No Margin</option>
+                                    <option value="10" selected>Small (10mm)</option>
+                                    <option value="20">Medium (20mm)</option>
+                                    <option value="30">Large (30mm)</option>
+                                </select>
+                            </div>
+                            <div class="option-item">
+                                <label for="imgQuality">Quality</label>
+                                <select id="imgQuality">
+                                    <option value="0.6">Low (Fast)</option>
+                                    <option value="0.8" selected>Medium</option>
+                                    <option value="1.0">High (Slow)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-bar" id="imgActionBar" style="display:none;">
+                        <div class="action-info">
+                            <span id="imgFileCount">0 files selected</span>
+                            <button class="btn btn-ghost btn-sm" onclick="clearFiles('image')">
+                                <i class="fas fa-trash-alt"></i> Clear All
+                            </button>
+                        </div>
+                        <button class="btn btn-primary btn-lg convert-btn" onclick="convertImageToPDF()">
+                            <i class="fas fa-magic"></i> Convert to PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== WORD TO PDF ===== -->
+                <div class="workspace-panel" id="panel-word-to-pdf">
+                    <div class="panel-top">
+                        <div class="panel-title">
+                            <img src="icons/word-to-pdf.svg" alt="" class="panel-icon-img" loading="lazy" width="40" height="40">
+                            <div>
+                                <h3>Word to PDF Converter</h3>
+                                <p>Upload your Word document (.docx) to convert it into PDF format</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropzone" id="wordDropzone"
+                         ondragover="dragOver(event)" 
+                         ondragleave="dragLeave(event)" 
+                         ondrop="dropFiles(event, 'word')">
+                        <input type="file" id="wordFileInput" accept=".docx,.doc,.txt,.rtf" onchange="handleFiles(this.files, 'word')" hidden>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <img src="icons/word-to-pdf.svg" alt="Word to PDF" loading="lazy" width="40" height="40">
+                            </div>
+                            <h4>Drag & Drop your Word file here</h4>
+                            <p>or</p>
+                            <button class="btn btn-primary" onclick="document.getElementById('wordFileInput').click()">
+                                <i class="fas fa-folder-open"></i> Browse Files
+                            </button>
+                            <span class="dropzone-formats">Supported: DOCX, DOC, TXT, RTF</span>
+                        </div>
+                    </div>
+
+                    <div class="word-preview-area" id="wordPreviewArea" style="display:none;">
+                        <div class="file-info-bar">
+                            <div class="file-info-left">
+                                <i class="fas fa-file-word file-icon-word"></i>
+                                <div>
+                                    <strong id="wordFileName">document.docx</strong>
+                                    <span id="wordFileSize">0 KB</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ghost btn-sm" onclick="clearFiles('word')">
+                                <i class="fas fa-times"></i> Remove
+                            </button>
+                        </div>
+                        <div class="document-preview" id="wordDocPreview">
+                            <p class="preview-placeholder">Document preview will appear here...</p>
+                        </div>
+                    </div>
+
+                    <div class="action-bar" id="wordActionBar" style="display:none;">
+                        <div class="action-info">
+                            <span>Ready to convert</span>
+                        </div>
+                        <button class="btn btn-primary btn-lg convert-btn" onclick="convertWordToPDF()">
+                            <i class="fas fa-magic"></i> Convert to PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== EXCEL TO PDF ===== -->
+                <div class="workspace-panel" id="panel-excel-to-pdf">
+                    <div class="panel-top">
+                        <div class="panel-title">
+                            <img src="icons/excel-to-pdf.svg" alt="" class="panel-icon-img" loading="lazy" width="40" height="40">
+                            <div>
+                                <h3>Excel to PDF Converter</h3>
+                                <p>Upload your Excel spreadsheet to convert it into a PDF document</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropzone" id="excelDropzone"
+                         ondragover="dragOver(event)" 
+                         ondragleave="dragLeave(event)" 
+                         ondrop="dropFiles(event, 'excel')">
+                        <input type="file" id="excelFileInput" accept=".xlsx,.xls,.csv" onchange="handleFiles(this.files, 'excel')" hidden>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <img src="icons/excel-to-pdf.svg" alt="Excel to PDF" loading="lazy" width="40" height="40">
+                            </div>
+                            <h4>Drag & Drop your Excel file here</h4>
+                            <p>or</p>
+                            <button class="btn btn-primary" onclick="document.getElementById('excelFileInput').click()">
+                                <i class="fas fa-folder-open"></i> Browse Files
+                            </button>
+                            <span class="dropzone-formats">Supported: XLSX, XLS, CSV</span>
+                        </div>
+                    </div>
+
+                    <div class="excel-preview-area" id="excelPreviewArea" style="display:none;">
+                        <div class="file-info-bar">
+                            <div class="file-info-left">
+                                <i class="fas fa-file-excel file-icon-excel"></i>
+                                <div>
+                                    <strong id="excelFileName">spreadsheet.xlsx</strong>
+                                    <span id="excelFileSize">0 KB</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ghost btn-sm" onclick="clearFiles('excel')">
+                                <i class="fas fa-times"></i> Remove
+                            </button>
+                        </div>
+                        <div class="table-preview-container" id="excelTablePreview">
+                        </div>
+                    </div>
+
+                    <div class="action-bar" id="excelActionBar" style="display:none;">
+                        <div class="action-info">
+                            <span>Ready to convert</span>
+                        </div>
+                        <button class="btn btn-primary btn-lg convert-btn" onclick="convertExcelToPDF()">
+                            <i class="fas fa-magic"></i> Convert to PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== PDF TO IMAGE ===== -->
+                <div class="workspace-panel" id="panel-pdf-to-image">
+                    <div class="panel-top">
+                        <div class="panel-title">
+                            <img src="icons/pdf-to-img.svg" alt="" class="panel-icon-img" loading="lazy" width="40" height="40">
+                            <div>
+                                <h3>PDF to Image Converter</h3>
+                                <p>Upload a PDF file to extract each page as a high-quality image</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropzone" id="pdfImgDropzone"
+                         ondragover="dragOver(event)" 
+                         ondragleave="dragLeave(event)" 
+                         ondrop="dropFiles(event, 'pdf-img')">
+                        <input type="file" id="pdfImgFileInput" accept=".pdf" onchange="handleFiles(this.files, 'pdf-img')" hidden>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <img src="icons/pdf-to-img.svg" alt="PDF to Image" loading="lazy" width="40" height="40">
+                            </div>
+                            <h4>Drag & Drop your PDF file here</h4>
+                            <p>or</p>
+                            <button class="btn btn-primary" onclick="document.getElementById('pdfImgFileInput').click()">
+                                <i class="fas fa-folder-open"></i> Browse PDF
+                            </button>
+                            <span class="dropzone-formats">Supported: PDF files only</span>
+                        </div>
+                    </div>
+
+                    <div class="pdf-img-options" id="pdfImgOptions" style="display:none;">
+                        <div class="file-info-bar">
+                            <div class="file-info-left">
+                                <i class="fas fa-file-pdf file-icon-pdf"></i>
+                                <div>
+                                    <strong id="pdfImgFileName">document.pdf</strong>
+                                    <span id="pdfImgPageCount">0 pages</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ghost btn-sm" onclick="clearFiles('pdf-img')">
+                                <i class="fas fa-times"></i> Remove
+                            </button>
+                        </div>
+                        <div class="options-row">
+                            <div class="option-item">
+                                <label for="pdfImgFormat">Image Format</label>
+                                <select id="pdfImgFormat">
+                                    <option value="png" selected>PNG (High Quality)</option>
+                                    <option value="jpeg">JPEG (Smaller Size)</option>
+                                </select>
+                            </div>
+                            <div class="option-item">
+                                <label for="pdfImgScale">Resolution</label>
+                                <select id="pdfImgScale">
+                                    <option value="1">Standard (1x)</option>
+                                    <option value="2" selected>High (2x)</option>
+                                    <option value="3">Ultra High (3x)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pdf-pages-grid" id="pdfPagesGrid"></div>
+
+                    <div class="action-bar" id="pdfImgActionBar" style="display:none;">
+                        <div class="action-info">
+                            <span id="pdfImgStatus">Ready to convert</span>
+                        </div>
+                        <button class="btn btn-primary btn-lg convert-btn" onclick="convertPDFToImage()">
+                            <i class="fas fa-magic"></i> Convert to Images
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== PDF TO WORD ===== -->
+                <div class="workspace-panel" id="panel-pdf-to-word">
+                    <div class="panel-top">
+                        <div class="panel-title">
+                            <img src="icons/pdf-to-word.svg" alt="" class="panel-icon-img" loading="lazy" width="40" height="40">
+                            <div>
+                                <h3>PDF to Word Converter</h3>
+                                <p>Upload a PDF to extract its text content into an editable document</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropzone" id="pdfWordDropzone"
+                         ondragover="dragOver(event)" 
+                         ondragleave="dragLeave(event)" 
+                         ondrop="dropFiles(event, 'pdf-word')">
+                        <input type="file" id="pdfWordFileInput" accept=".pdf" onchange="handleFiles(this.files, 'pdf-word')" hidden>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <img src="icons/pdf-to-word.svg" alt="PDF to Word" loading="lazy" width="40" height="40">
+                            </div>
+                            <h4>Drag & Drop your PDF file here</h4>
+                            <p>or</p>
+                            <button class="btn btn-primary" onclick="document.getElementById('pdfWordFileInput').click()">
+                                <i class="fas fa-folder-open"></i> Browse PDF
+                            </button>
+                            <span class="dropzone-formats">Text-based PDFs work best</span>
+                        </div>
+                    </div>
+
+                    <div class="pdf-word-preview" id="pdfWordPreview" style="display:none;">
+                        <div class="file-info-bar">
+                            <div class="file-info-left">
+                                <i class="fas fa-file-pdf file-icon-pdf"></i>
+                                <div>
+                                    <strong id="pdfWordFileName">document.pdf</strong>
+                                    <span id="pdfWordFileSize">0 KB</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ghost btn-sm" onclick="clearFiles('pdf-word')">
+                                <i class="fas fa-times"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="action-bar" id="pdfWordActionBar" style="display:none;">
+                        <div class="action-info">
+                            <span>Ready to extract text</span>
+                        </div>
+                        <button class="btn btn-primary btn-lg convert-btn" onclick="convertPDFToWord()">
+                            <i class="fas fa-magic"></i> Convert to Word
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== PDF TO EXCEL ===== -->
+                <div class="workspace-panel" id="panel-pdf-to-excel">
+                    <div class="panel-top">
+                        <div class="panel-title">
+                            <img src="icons/pdf-to-excel.svg" alt="" class="panel-icon-img" loading="lazy" width="40" height="40">
+                            <div>
+                                <h3>PDF to Excel Converter</h3>
+                                <p>Upload a PDF with table data to extract it into an Excel spreadsheet</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropzone" id="pdfExcelDropzone"
+                         ondragover="dragOver(event)" 
+                         ondragleave="dragLeave(event)" 
+                         ondrop="dropFiles(event, 'pdf-excel')">
+                        <input type="file" id="pdfExcelFileInput" accept=".pdf" onchange="handleFiles(this.files, 'pdf-excel')" hidden>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <img src="icons/pdf-to-excel.svg" alt="PDF to Excel" loading="lazy" width="40" height="40">
+                            </div>
+                            <h4>Drag & Drop your PDF file here</h4>
+                            <p>or</p>
+                            <button class="btn btn-primary" onclick="document.getElementById('pdfExcelFileInput').click()">
+                                <i class="fas fa-folder-open"></i> Browse PDF
+                            </button>
+                            <span class="dropzone-formats">PDFs with tables work best</span>
+                        </div>
+                    </div>
+
+                    <div class="pdf-excel-preview" id="pdfExcelPreview" style="display:none;">
+                        <div class="file-info-bar">
+                            <div class="file-info-left">
+                                <i class="fas fa-file-pdf file-icon-pdf"></i>
+                                <div>
+                                    <strong id="pdfExcelFileName">document.pdf</strong>
+                                    <span id="pdfExcelFileSize">0 KB</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ghost btn-sm" onclick="clearFiles('pdf-excel')">
+                                <i class="fas fa-times"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="action-bar" id="pdfExcelActionBar" style="display:none;">
+                        <div class="action-info">
+                            <span>Ready to extract table data</span>
+                        </div>
+                        <button class="btn btn-primary btn-lg convert-btn" onclick="convertPDFToExcel()">
+                            <i class="fas fa-magic"></i> Convert to Excel
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container" id="progressContainer" style="display:none;">
+                <div class="progress-info">
+                    <span id="progressText">Converting...</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS SECTION ============ -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="--badge-index:1"><i class="fas fa-star"></i> What Users Say</span>
+                <h2 class="section-title">Trusted by Thousands</h2>
+                <p class="section-desc">See what our users have to say about their experience.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The best free PDF converter I've ever used. It's fast, secure, and works perfectly every time. No uploads, no signups, just instant results."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div>
+                            <div class="testimonial-name">Alex Kumar</div>
+                            <div class="testimonial-role">Software Engineer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I use PDFToolify daily for my business documents. The image to PDF feature is incredibly handy. Highly recommended for anyone needing quick conversions."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div>
+                            <div class="testimonial-name">Sarah Mitchell</div>
+                            <div class="testimonial-role">Freelance Designer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Finally a PDF tool that respects privacy. Everything runs locally in the browser. No server uploads means my sensitive documents stay safe."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JR</div>
+                        <div>
+                            <div class="testimonial-name">James Rodriguez</div>
+                            <div class="testimonial-role">Data Analyst</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FEATURES SECTION ============ -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="--badge-index:2"><i class="fas fa-star"></i> Why Choose Us</span>
+                <h2 class="section-title">Why PDFToolify?</h2>
+                <p class="section-desc">Here's what makes our PDF converter stand out from the rest.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrap gradient-blue">
+                        <img src="icons/feature-secure.png" alt="Secure" loading="lazy" width="64" height="64">
+                    </div>
+                    <h3>100% Secure</h3>
+                    <p>All processing happens in your browser. Your files never leave your device — zero server uploads.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap gradient-purple">
+                        <img src="icons/feature-fast.png" alt="Fast" loading="lazy" width="64" height="64">
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Convert files in seconds using cutting-edge browser technology. No waiting, no queues.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap gradient-green">
+                        <img src="icons/feature-free.png" alt="Free" loading="lazy" width="64" height="64">
+                    </div>
+                    <h3>Completely Free</h3>
+                    <p>No hidden costs, no premium plans, no credit card needed. Every feature is 100% free.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap gradient-orange">
+                        <img src="icons/feature-everywhere.png" alt="Everywhere" loading="lazy" width="64" height="64">
+                    </div>
+                    <h3>Works Everywhere</h3>
+                    <p>Use it on your phone, tablet, or computer. Fully responsive and cross-platform compatible.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap gradient-pink">
+                        <img src="icons/feature-nolimits.png" alt="No Limits" loading="lazy" width="64" height="64">
+                    </div>
+                    <h3>No Limits</h3>
+                    <p>Convert as many files as you want. No daily limits, no file size restrictions, no signup required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap gradient-teal">
+                        <img src="icons/feature-quality.png" alt="Quality" loading="lazy" width="64" height="64">
+                    </div>
+                    <h3>High Quality</h3>
+                    <p>Maintain the original quality of your documents. Pixel-perfect conversion every single time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="--badge-index:3"><i class="fas fa-question-circle"></i> How It Works</span>
+                <h2 class="section-title">3 Simple Steps</h2>
+                <p class="section-desc">Converting your files is as easy as 1-2-3</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-hand-pointer"></i>
+                    </div>
+                    <h3>Choose Your Tool</h3>
+                    <p>Select the conversion tool you need from our 6 powerful options above.</p>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Upload Your File</h3>
+                    <p>Drag & drop your file or click to browse. We support all major file formats.</p>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Download Result</h3>
+                    <p>Click convert and your file downloads automatically. It's that simple!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="--badge-index:4"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Got questions? We've got answers.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is PDFToolify really free to use?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! PDFToolify is 100% free with no hidden charges, no premium plans, and no signup required. All tools are available to everyone without any limitations.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Are my files safe and secure?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! All file processing happens directly in your browser. Your files are never uploaded to any server. They stay on your device at all times, ensuring complete privacy and security.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What file formats are supported?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We support a wide range of formats including: JPG, PNG, WEBP, GIF, BMP (images), DOCX, DOC, TXT (Word), XLSX, XLS, CSV (Excel), and PDF files for reverse conversion.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Does it work on mobile devices?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! PDFToolify is fully responsive and works perfectly on smartphones, tablets, and desktop computers. Use any modern web browser to access our tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="--badge-index:5"><i class="fas fa-envelope"></i> Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">Have a question, suggestion, or feedback? We'd love to hear from you!</p>
+            </div>
+
+            <div class="contact-grid">
+                <form class="contact-form" id="contactForm" onsubmit="handleContact(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Full Name</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="contactName" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="contactEmail" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-tag"></i>
+                            <input type="text" id="contactSubject" placeholder="How can we help?" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <div class="input-wrap textarea-wrap">
+                            <i class="fas fa-comment-dots"></i>
+                            <textarea id="contactMessage" placeholder="Write your message here..." rows="5" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+
+                <div class="contact-info-cards">
+                    <div class="contact-info-card">
+                        <div class="contact-card-icon gradient-blue">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Lahore, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-card-icon gradient-green">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>support@pdftoolify.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-card-icon gradient-purple">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+92 300 1234567</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-card-icon gradient-orange">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Available</h4>
+                            <p>24/7 Online Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="#" class="footer-logo">
+                        <span class="logo-icon-3d"><img src="icons/logo-icon.svg" alt="PDFToolify" class="logo-svg" loading="lazy" width="50" height="50"></span>
+                        <span class="logo-text">PDFToolify</span>
+                    </a>
+                    <p>Smart Tools for Everyday PDF Tasks. Convert, merge, and transform your documents instantly — all for free.</p>
+                    
+                    <div class="footer-social">
+                        <a href="https://facebook.com/pdftoolify" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/pdftoolify" target="_blank" rel="noopener noreferrer" aria-label="X">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/pdftoolify" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anitaarshad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com/@pdftoolify" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>PDF Tools</h4>
+                    <ul>
+                        <li><a href="#" onclick="scrollToTool('image-to-pdf')">Image to PDF</a></li>
+                        <li><a href="#" onclick="scrollToTool('word-to-pdf')">Word to PDF</a></li>
+                        <li><a href="#" onclick="scrollToTool('excel-to-pdf')">Excel to PDF</a></li>
+                        <li><a href="#" onclick="scrollToTool('pdf-to-image')">PDF to Image</a></li>
+                        <li><a href="#" onclick="scrollToTool('pdf-to-word')">PDF to Word</a></li>
+                        <li><a href="#" onclick="scrollToTool('pdf-to-excel')">PDF to Excel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PDFToolify. All rights reserved. Made with <i class="fas fa-heart" style="color:#06b6d4;"></i> in Pakistan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ============ TOAST NOTIFICATION ============ -->
+    <div class="toast-container" id="toastContainer"></div>
+
+<script defer src="script.js"></script>
+
+</body>
+</html>

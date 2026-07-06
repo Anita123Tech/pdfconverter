@@ -34,9 +34,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ============ SKIP TO CONTENT ============ -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ============ NAVBAR ============ -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="#" class="nav-logo">
                 <span class="logo-icon-3d"><img src="icons/logo-icon.svg" alt="PDFToolify" class="logo-svg"></span>
@@ -53,7 +55,7 @@
             <div class="nav-actions">
                 <a href="#tools" class="nav-cta"><i class="fas fa-rocket"></i> Get Started</a>
             </div>
-            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle Menu">
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -62,6 +64,7 @@
     </nav>
 
     <!-- ============ HERO SECTION ============ -->
+    <main id="main-content">
     <section class="hero" id="home">
         <div class="hero-particles" id="particles"></div>
         <div class="hero-content">
@@ -131,7 +134,7 @@
 
             <!-- Tool Selection Grid -->
             <div class="tools-grid">
-                <div class="tool-card active" data-tool="image-to-pdf" onclick="switchTool('image-to-pdf', this)">
+                <div class="tool-card active" role="button" tabindex="0" data-tool="image-to-pdf" onclick="switchTool('image-to-pdf', this)">
                     <div class="tool-card-img">
                         <img src="icons/img-to-pdf.svg" alt="Image to PDF" loading="lazy" width="40" height="40">
                     </div>
@@ -144,7 +147,7 @@
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool="word-to-pdf" onclick="switchTool('word-to-pdf', this)">
+                <div class="tool-card" role="button" tabindex="0" data-tool="word-to-pdf" onclick="switchTool('word-to-pdf', this)">
                     <div class="tool-card-img">
                         <img src="icons/word-to-pdf.svg" alt="Word to PDF" loading="lazy" width="40" height="40">
                     </div>
@@ -157,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool="excel-to-pdf" onclick="switchTool('excel-to-pdf', this)">
+                <div class="tool-card" role="button" tabindex="0" data-tool="excel-to-pdf" onclick="switchTool('excel-to-pdf', this)">
                     <div class="tool-card-img">
                         <img src="icons/excel-to-pdf.svg" alt="Excel to PDF" loading="lazy" width="40" height="40">
                     </div>
@@ -170,7 +173,7 @@
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool="pdf-to-image" onclick="switchTool('pdf-to-image', this)">
+                <div class="tool-card" role="button" tabindex="0" data-tool="pdf-to-image" onclick="switchTool('pdf-to-image', this)">
                     <div class="tool-card-img">
                         <img src="icons/pdf-to-img.svg" alt="PDF to Image" loading="lazy" width="40" height="40">
                     </div>
@@ -183,7 +186,7 @@
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool="pdf-to-word" onclick="switchTool('pdf-to-word', this)">
+                <div class="tool-card" role="button" tabindex="0" data-tool="pdf-to-word" onclick="switchTool('pdf-to-word', this)">
                     <div class="tool-card-img">
                         <img src="icons/pdf-to-word.svg" alt="PDF to Word" loading="lazy" width="40" height="40">
                     </div>
@@ -196,7 +199,7 @@
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool="pdf-to-excel" onclick="switchTool('pdf-to-excel', this)">
+                <div class="tool-card" role="button" tabindex="0" data-tool="pdf-to-excel" onclick="switchTool('pdf-to-excel', this)">
                     <div class="tool-card-img">
                         <img src="icons/pdf-to-excel.svg" alt="PDF to Excel" loading="lazy" width="40" height="40">
                     </div>
@@ -745,7 +748,7 @@
             </div>
 
             <div class="steps-container">
-                <div class="step-card">
+                <div class="step-card" tabindex="0">
                     <div class="step-number">01</div>
                     <div class="step-icon">
                         <i class="fas fa-hand-pointer"></i>
@@ -757,7 +760,7 @@
                     <div class="connector-line"></div>
                     <i class="fas fa-chevron-right"></i>
                 </div>
-                <div class="step-card">
+                <div class="step-card" tabindex="0">
                     <div class="step-number">02</div>
                     <div class="step-icon">
                         <i class="fas fa-cloud-upload-alt"></i>
@@ -769,7 +772,7 @@
                     <div class="connector-line"></div>
                     <i class="fas fa-chevron-right"></i>
                 </div>
-                <div class="step-card">
+                <div class="step-card" tabindex="0">
                     <div class="step-number">03</div>
                     <div class="step-icon">
                         <i class="fas fa-download"></i>
@@ -791,7 +794,7 @@
             </div>
 
             <div class="faq-list">
-                <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-item" role="button" tabindex="0" onclick="toggleFAQ(this)">
                     <div class="faq-question">
                         <span>Is PDFToolify really free to use?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -800,7 +803,7 @@
                         <p>Yes! PDFToolify is 100% free with no hidden charges, no premium plans, and no signup required. All tools are available to everyone without any limitations.</p>
                     </div>
                 </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-item" role="button" tabindex="0" onclick="toggleFAQ(this)">
                     <div class="faq-question">
                         <span>Are my files safe and secure?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -809,7 +812,7 @@
                         <p>Absolutely! All file processing happens directly in your browser. Your files are never uploaded to any server. They stay on your device at all times, ensuring complete privacy and security.</p>
                     </div>
                 </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-item" role="button" tabindex="0" onclick="toggleFAQ(this)">
                     <div class="faq-question">
                         <span>What file formats are supported?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -818,7 +821,7 @@
                         <p>We support a wide range of formats including: JPG, PNG, WEBP, GIF, BMP (images), DOCX, DOC, TXT (Word), XLSX, XLS, CSV (Excel), and PDF files for reverse conversion.</p>
                     </div>
                 </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-item" role="button" tabindex="0" onclick="toggleFAQ(this)">
                     <div class="faq-question">
                         <span>Does it work on mobile devices?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -918,6 +921,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
